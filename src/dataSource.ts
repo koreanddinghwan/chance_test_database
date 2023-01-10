@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { Album } from "./test/Album";
 import { Author } from "./test/Author";
 import { Photo } from "./test/Photo";
 import { PhotoMetadata } from "./test/PhotoMetaData";
@@ -11,7 +12,7 @@ const AppDataSource = new DataSource({
   username: process.env.DBUSER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
-  entities: [Photo, PhotoMetadata, Author],
+  entities: [Photo, PhotoMetadata, Author, Album],
   synchronize: true, //특정 조건하에서 모든 데이터를 삭제하는 것 같습니다. 프로덕션에서는 사용하지 않는게 좋습니다.
   logging: true,
 });
@@ -25,7 +26,5 @@ AppDataSource.initialize()
   })
   .catch((error) => {
     console.log(error);
-    console.log(process.env.HOST);
-    console.log(process.env.PORT);
     AppDataSource.destroy();
   });

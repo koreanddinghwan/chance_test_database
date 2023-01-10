@@ -5,7 +5,9 @@ import {
   OneToOne,
   Relation,
   ManyToOne,
+  ManyToMany,
 } from "typeorm";
+import { Album } from "./Album";
 import { Author } from "./Author";
 import { PhotoMetadata } from "./PhotoMetaData";
 
@@ -38,4 +40,7 @@ export class Photo {
 
   @ManyToOne(() => Author, (author) => author.photos)
   author: Author;
+
+  @ManyToMany(() => Album, (album) => album.photos)
+  albums: Album[];
 }
