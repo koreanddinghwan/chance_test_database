@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start":"ts-node src"
+    "start": "NODE_ENV=dev && ts-node src"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
   "dependencies": {
     "@types/mysql": "^2.15.21",
     "chance": "^1.1.9",
-    "mysql": "^2.18.1"
+    "dotenv": "^16.0.3",
+    "mysql": "^2.18.1",
+    "typeorm": "^0.3.11"
   }
 }

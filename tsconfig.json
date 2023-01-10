@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "sourceMap": true,
     "downlevelIteration": true,
-    "noImplicitany": false,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
     "paths": { "*": ["node_modules/*"] }
   },
   "include": ["src/**/*"]
