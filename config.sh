@@ -1,3 +1,4 @@
+echo "This script will create .env file to save Database Connection Information"
 read -p "please enter your database host: " host
 read -p "port: " port
 read -p "your database name: " database
